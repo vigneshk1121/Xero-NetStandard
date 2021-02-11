@@ -3,6 +3,10 @@ name: .NET
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Enter the version of the SDK"
   
 jobs:
   build:
@@ -24,4 +28,5 @@ jobs:
     - name: Create Package for Nuget.org\
       run: dotnet pack
     - name: Publish Package to Nuget.org
+#       if: ${{ github.event.workflow_dispatch}}
       run: dotnet nuget push ./Xero.NetStandard.OAuth2/bin/Debug/Xero.NetStandard.OAuth2Test.${{ github.event.release.name }}.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
