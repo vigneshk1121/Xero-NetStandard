@@ -9,6 +9,7 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>.NETStandard</TargetFrameworkIdentifier>
     <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <ItemGroup>
