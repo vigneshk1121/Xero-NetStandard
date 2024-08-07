@@ -1,14 +1,10 @@
-name: .NET
-
+name: .NET Publish
 on:
   release:
     types: [published]
-  
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
